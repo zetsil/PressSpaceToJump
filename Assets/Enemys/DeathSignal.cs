@@ -15,7 +15,7 @@ public class DeathSignal : MonoBehaviour, IEventDispatcher
     private void OnDestroy()
     {
         // Notify listeners about the enemy's death
-        onNotify("EnemyDied", this); 
+        onNotify("EnemyDied", null); 
     }
 
     public void AddListener(IObserver listener)

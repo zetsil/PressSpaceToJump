@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro; 
-using UnityEngine.UI; 
 
 public class WaveManager : MonoBehaviour, IObserver
 {
@@ -15,12 +14,15 @@ public class WaveManager : MonoBehaviour, IObserver
 
     public TextMeshProUGUI enemyCountText; // Reference to the TextMeshProUGUI component
 
+    private bool shouldProcessEnemyDeath = true;
+
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); 
+            // DontDestroyOnLoad(gameObject); 
         }
         else
         {
@@ -54,7 +56,7 @@ public class WaveManager : MonoBehaviour, IObserver
 
     public void OnEvent(string notificationType, object a) 
     {
-        if (notificationType == "EnemyDied") 
+        if(notificationType == "EnemyDied" && shouldProcessEnemyDeath)
         {
             currentEnemys--;
             UpdateEnemyCountText(); 
@@ -64,6 +66,11 @@ public class WaveManager : MonoBehaviour, IObserver
                 StartNextWave(); 
             }
         }
+    }
+
+    public void ResetWaveManager() // Call this when restarting the level
+    {
+        shouldProcessEnemyDeath = false;
     }
 
     public int CountChildren(Transform LVLtransform) // count enemys in this lvl

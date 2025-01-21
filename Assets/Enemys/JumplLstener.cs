@@ -93,7 +93,7 @@ public class JumpListener : MonoBehaviour , IObserver
     {
 
         Jump.Instance.RemoveObserver(this);
-        OnEvent("EnemyDied", this);
+        OnEvent("EnemyDied", null);
     }
 
      public void OnEvent(string signal, object o){

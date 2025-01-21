@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
 
     public Image[] heartImages; 
+    public GameObject gameOverPanel;
+
 
     private void Awake()
     {
@@ -27,6 +29,15 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHeartUI();
+
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Game Over Panel not assigned in the Inspector!");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -50,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            PlayerDeath();
             // Handle player death (e.g., Game Over)
             Debug.Log("Player Died!");
         }
@@ -70,5 +82,18 @@ public class PlayerHealth : MonoBehaviour
                 heartImages[i].enabled = false; 
             }
         }
+    }
+
+    void PlayerDeath()
+    {
+        Debug.Log("Player Died!");
+
+        // Activează panoul de Game Over
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0f; // Opreste timpul cand moare playerul
+        }
+
     }
 }

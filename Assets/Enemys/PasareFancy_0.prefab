@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 922180198165215579}
   - component: {fileID: 5974617486278335763}
   - component: {fileID: 514547711403817076}
-  - component: {fileID: 6055465502578726877}
   - component: {fileID: 3532625544503018299}
   - component: {fileID: -3961061284503267555}
   - component: {fileID: -8643233396943695333}
+  - component: {fileID: -6214041118707370419}
+  - component: {fileID: -5747565532018532409}
   m_Layer: 7
   m_Name: PasareFancy_0
   m_TagString: Untagged
@@ -166,21 +167,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.2, y: 0.29}
   m_EdgeRadius: 0
---- !u!114 &6055465502578726877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8802927307237729750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9166912b237eab9299e3d1c9391863a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 14.9
-  soundClips:
-  - {fileID: 8300000, guid: 58ce1bf65d29c126d8635c326caae6a8, type: 3}
 --- !u!114 &3532625544503018299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,3 +292,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b58e47a8f219d4581af9c526d81ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6214041118707370419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802927307237729750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6992d1076c053217b64b61aea086a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 15
+--- !u!114 &-5747565532018532409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802927307237729750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1b7900e1c06540bb53293bff15300e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips:
+  - {fileID: 8300000, guid: 58ce1bf65d29c126d8635c326caae6a8, type: 3}

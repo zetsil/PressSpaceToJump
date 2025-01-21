@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 4194929640244831005}
   - component: {fileID: 3605111915595300267}
   - component: {fileID: 4697785282709845475}
+  - component: {fileID: -5455450825082727789}
+  - component: {fileID: -6517578983435552858}
+  - component: {fileID: -476912843345288009}
   m_Layer: 7
   m_Name: ball
   m_TagString: Untagged
@@ -166,3 +169,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &-5455450825082727789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6373161132512527113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b58e47a8f219d4581af9c526d81ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6517578983435552858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6373161132512527113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1b7900e1c06540bb53293bff15300e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips: []
+--- !u!114 &-476912843345288009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6373161132512527113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6992d1076c053217b64b61aea086a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 3

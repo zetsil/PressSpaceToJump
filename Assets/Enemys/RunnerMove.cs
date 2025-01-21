@@ -12,8 +12,11 @@ public class EnemyAI : MonoBehaviour
     public float uprightThreshold = 30f; // Degrees allowed from upright before correcting
     public float correctionTorque = 10f; // Torque applied to correct rotation
 
+    private Vector3 scale;
+
     void Start()
     {
+        scale = transform.localScale;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         if (player == null)
         {
@@ -83,10 +86,13 @@ public class EnemyAI : MonoBehaviour
                 if (horizontalDirection > 0)
                 {
                     currentVelocity.x = speed;
+                    scale.x = Mathf.Sign(1) * Mathf.Abs(scale.x); // Flip based on direction
                 }
                 else
                 {
                     currentVelocity.x = -speed;
+                    scale.x = Mathf.Sign(-1) * Mathf.Abs(scale.x); // Flip based on direction
+
                 }
             }
             else
@@ -102,7 +108,18 @@ public class EnemyAI : MonoBehaviour
             Vector2 currentVelocity = rb.linearVelocity;
             currentVelocity.x = rb.linearVelocity.x;
             rb.linearVelocity = currentVelocity;
+            transform.localScale = scale;
         }
+
+        //        if (horizontalInput != 0 && !isDashing)
+        // {
+        //     transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime);
+
+        //     // Handle Object Flip
+        //     Vector3 scale = transform.localScale;
+        //     scale.x = Mathf.Sign(horizontalInput) * Mathf.Abs(scale.x); // Flip based on direction
+        //     transform.localScale = scale;
+        // }
     }
 
     void CheckAndCorrectOrientation()
